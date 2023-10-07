@@ -8,7 +8,6 @@ An app to help decide what we should cook tonight!
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
@@ -39,4 +38,8 @@ This is my first project I intend on using multiple times a week! I am planning 
 
 ## Usage
 
+TBD - Update when app is running
 
+## Contributing
+
+Details to come
