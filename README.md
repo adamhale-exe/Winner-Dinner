@@ -1,4 +1,4 @@
-# Hungry-Helper
+# Winner-Dinner
 An app to help decide what we should cook tonight!
 
 ## Table of Contents
