@@ -1,0 +1,235 @@
+<mxfile host="65bd71144e">
+    <diagram id="Iqp9NQM40ZFqhQnwkFbd" name="Page-1">
+        <mxGraphModel dx="1311" dy="1211" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;fontSize=14;" edge="1" parent="1" source="2" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Initialise project, download required modules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="196" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SPRINT 1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="-89" y="62" width="184" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Express&lt;br style=&quot;font-size: 14px;&quot;&gt;Morgan&lt;br style=&quot;font-size: 14px;&quot;&gt;Nodemon&lt;br style=&quot;font-size: 14px;&quot;&gt;pg&lt;br style=&quot;font-size: 14px;&quot;&gt;dotenv" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="203" y="210" width="105" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="edgeStyle=none;html=1;fontSize=14;" edge="1" parent="1" source="7" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="write index file to define pool variable and use connection string in .env file" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="322" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;fontSize=14;" edge="1" parent="1" source="8" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="write reset-database script see Sprint 1 drawSQL for table schemas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="448" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=none;html=1;fontSize=14;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="4">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="97" y="495" as="sourcePoint"/>
+                        <mxPoint x="147" y="445" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Create Model file for each Table in the SQL db for full CRUD operations" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="574" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="recipes table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-254.5" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="proteins table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-122" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="carbs table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="9" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="links table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="140.5" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.401;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="12" target="15">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-39" y="677" as="sourcePoint"/>
+                        <mxPoint x="-62" y="684" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.596;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-60" y="675" as="sourcePoint"/>
+                        <mxPoint x="-10" y="625" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.196;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="12" target="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-60" y="675" as="sourcePoint"/>
+                        <mxPoint x="-10" y="625" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.802;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="17">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-60" y="675" as="sourcePoint"/>
+                        <mxPoint x="-10" y="625" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="Create Controller file for each Table in the SQL db for full CRUD operations" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="805" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.196;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="14" target="25">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-43" y="870" as="sourcePoint"/>
+                        <mxPoint x="7" y="820" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.401;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="15" target="25">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-43" y="870" as="sourcePoint"/>
+                        <mxPoint x="7" y="820" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.595;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="16" target="25">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-43" y="870" as="sourcePoint"/>
+                        <mxPoint x="30" y="805" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.802;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="17" target="25">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="43" y="866" as="sourcePoint"/>
+                        <mxPoint x="93" y="816" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="recipes table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-254.5" y="931.08" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="proteins table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-122" y="931.08" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="carbs table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="9" y="931.08" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="links table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="140.5" y="931.08" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.401;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="35">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-24.22499999999991" y="886.08" as="sourcePoint"/>
+                        <mxPoint x="-62" y="915.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.596;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="36">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="29.40000000000009" y="885.9990000000001" as="sourcePoint"/>
+                        <mxPoint x="-10" y="856.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.196;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" target="34">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-80.59999999999991" y="886.08" as="sourcePoint"/>
+                        <mxPoint x="-10" y="856.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.802;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="37">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="86.05000000000018" y="885.9990000000001" as="sourcePoint"/>
+                        <mxPoint x="-10" y="856.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="Create Routes file for each Table in the SQL db for full CRUD operations" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="1036.08" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.196;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-164.5" y="991.08" as="sourcePoint"/>
+                        <mxPoint x="7" y="1051.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.401;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-32" y="991.08" as="sourcePoint"/>
+                        <mxPoint x="7" y="1051.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.595;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="39" y="991.08" as="sourcePoint"/>
+                        <mxPoint x="30" y="1036.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.802;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170.5" y="991.08" as="sourcePoint"/>
+                        <mxPoint x="93" y="1047.08" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="recipes table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-254.5" y="1162.16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="proteins table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="-122" y="1162.16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="carbs table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="9" y="1162.16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="links table" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="140.5" y="1162.16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.401;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="48">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-24.22499999999991" y="1117.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="-62" y="1146.16" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.596;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="49">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="29.40000000000009" y="1117.0790000000002" as="sourcePoint"/>
+                        <mxPoint x="-10" y="1087.16" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.196;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" target="47">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-80.59999999999991" y="1117.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="-10" y="1087.16" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.802;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="50">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="86.05000000000018" y="1117.0790000000002" as="sourcePoint"/>
+                        <mxPoint x="-10" y="1087.16" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="Create app.js file pointing incoming traffic to the relevant scripts for handling" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-134.5" y="1267.1599999999999" width="275" height="81" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.196;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="55">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-164.5" y="1222.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="7" y="1282.1599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.401;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="55">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-32" y="1222.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="7" y="1282.1599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.595;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="55">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="39" y="1222.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="30" y="1267.1599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="" style="endArrow=classic;html=1;fontSize=14;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.802;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="55">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170.5" y="1222.1599999999999" as="sourcePoint"/>
+                        <mxPoint x="93" y="1278.1599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="MVP" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="-57" y="1388" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
