@@ -77,7 +77,7 @@ async function resetDatabase() {
           ('https://www.bbcgoodfood.com/recipes/jerk-chicken-rice-peas');
     `);
 
-    // Seed the links table
+    // Seed the recipes table
     await pool.query(`
         INSERT INTO recipes (name, time, protein_type, carbs_type, recipe_link)
         VALUES 
