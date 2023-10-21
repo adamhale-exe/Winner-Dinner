@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config server.js",
     "reset-database": "node -r dotenv/config db/scripts/reset-database.js"
   },
   "keywords": [],
