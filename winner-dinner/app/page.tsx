@@ -1,4 +1,3 @@
-import Image from "next/image";
 import RandomRecipe from "./RandomRecipe";
 import RecipeChooseForm from "./RecipeChooseForm";
 
