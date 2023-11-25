@@ -1,10 +1,11 @@
 import express from "express";
 import logger from "morgan";
+import cors from "cors";
 
-import proteinRouter from "./routes/protein.router.js";
-import carbsRouter from "./routes/carbs.router.js";
-import linksRouter from "./routes/links.router.js";
-import recipesRouter from "./routes/recipes.router.js";
+import { proteinsRouter } from "./routes/proteins.router.js";
+import { carbsRouter } from "./routes/carbs.router.js";
+import { linksRouter } from "./routes/links.router.js";
+import { recipesRouter } from "./routes/recipes.router.js";
 
 const app = express();
 
@@ -12,10 +13,17 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.static("public"));
 
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "PATCH"],
+  })
+);
+
 app.use("/carbs", carbsRouter);
-app.use("/protein", carbsRouter);
-app.use("/links", carbsRouter);
-app.use("/recipe", carbsRouter);
+app.use("/proteins", proteinsRouter);
+app.use("/links", linksRouter);
+app.use("/recipes", recipesRouter);
 
 app.use(function (_req, res, _next) {
   res.status(404).json({

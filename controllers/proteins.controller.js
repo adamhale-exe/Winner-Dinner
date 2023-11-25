@@ -1,86 +1,75 @@
-// Import the 'pool' object so our helper functions can interact with the PostgreSQL database
-import { pool } from "../db/index.js";
+//will need to import proteins models from /models/proteins.js
+import * as proteinsModel from "../models/proteinsModel.js";
 
-export async function getProteins() {
-  // Query the database and return all Proteins
-
-  // Define the SQL query to fetch all proteins from the 'proteins' table
-  const queryText = "SELECT * FROM proteins";
-
-  // Use the pool object to send the query to the database
-  const result = await pool.query(queryText);
-
-  // The rows property of the result object contains the retrieved records
-  return result.rows;
+//first request to return all proteins
+export async function getProteins(req, res) {
+  const result = await proteinsModel.getProteins();
+  res.status(200).json({ success: true, payload: result });
 }
 
-export async function getProteinById(id) {
-  // Query the database and return the protein with a matching id or null
-
-  // Define the SQL query to fetch the protein with the specified id from the 'proteins' table
-  const queryText = "SELECT * FROM proteins WHERE id = $1";
-
-  // Use the pool object to send the query to the database
-  // passing the id as a parameter to prevent SQL injection
-  const result = await pool.query(queryText, [id]);
-
-  // The rows property of the result object contains the retrieved records
-  return result.rows[0] || null;
+//return specific protein by id
+export async function getProteinById(req, res) {
+  const id = Number(req.params.id);
+  const result = await proteinsModel.getProteinById(id);
+  if (result != null) {
+    res.status(200).json({ success: true, payload: result });
+  } else {
+    res.status(404).json({
+      success: false,
+      error:
+        "We couldn't find what you were looking for 😞. Does that protein exist?",
+    });
+  }
 }
 
-export async function createProtein(protein) {
-  // Query the database to create an protein and return the newly created protein
-
-  // Define the SQL query for inserting a new protein into the 'proteins' table
-  const queryText = `
-        INSERT INTO proteins (protein, protein_type)
-        VALUES ($1, $2)
-        RETURNING *;
-      `;
-
-  // Use the pool object to send the query to the database
-  const result = await pool.query(queryText, [
-    protein.protein,
-    protein.protein_type,
-  ]);
-
-  // The rows property of the result object contains the inserted record
-  return result.rows[0];
+// create a new protein in the list
+export async function createProtein(req, res) {
+  if (Object.keys(req.body).length !== 2) {
+    res.status(400).json({
+      success: false,
+      error: "Invalid request 😞. Please review and try again!",
+    });
+  } else {
+    const newProtein = req.body;
+    const result = await proteinsModel.createProtein(newProtein);
+    if (result != null) {
+      res.status(201).json({ success: true, payload: result });
+    } else {
+      res.status(500).json({
+        success: false,
+        error: "We couldn't add the protein 😞. Try again later!",
+      });
+    }
+  }
 }
 
-export async function updateProteinById(id, updates) {
-  // Define the SQL query for updating the specified protein in the 'proteins' table
-  const queryText = `
-        UPDATE proteins
-        SET protein = COALESCE($1, protein), protein_type = COALESCE($2, protein_type)
-        WHERE id = $3
-        RETURNING *;
-      `;
-
-  // Use the pool object to send the query to the database
-  const result = await pool.query(queryText, [
-    updates.protein,
-    updates.protein_type,
-    id,
-  ]);
-
-  // The rows property of the result object contains the updated record
-  return result.rows[0] || null;
+//update the details of an existing protein
+export async function updateProteinById(req, res) {
+  const id = Number(req.params.id);
+  const updateProtein = req.body;
+  const result = await proteinsModel.updateProteinById(id, updateProtein);
+  if (result != null) {
+    res.status(200).json({ success: true, payload: result });
+  } else {
+    res.status(404).json({
+      success: false,
+      error:
+        "We couldn't find what you were looking for 😞. Does that protein exist?",
+    });
+  }
 }
 
-export async function deleteProteinById(id) {
-  // Query the database to delete an protein and return the deleted protein or null
-
-  // Define the SQL query for deleting the specified protein from the 'proteins' table
-  const queryText = `
-        DELETE FROM proteins
-        WHERE id = $1
-        RETURNING *;
-      `;
-
-  // Use the pool object to send the query to the database
-  const result = await pool.query(queryText, [id]);
-
-  // The rows property of the result object contains the deleted record
-  return result.rows[0] || null;
+// delete a protein
+export async function deleteProteinById(req, res) {
+  const id = Number(req.params.id);
+  const result = await proteinsModel.deleteProteinById(id);
+  if (result != null) {
+    res.status(200).json({ success: true, payload: result });
+  } else {
+    res.status(404).json({
+      success: false,
+      error:
+        "We couldn't find what you were looking for 😞. Does that protein exist?",
+    });
+  }
 }
