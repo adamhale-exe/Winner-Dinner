@@ -1,9 +1,16 @@
 import getRecipe from "./custom functions/getRecipe";
+import getCarb from "./custom functions/getCarb";
+import getProtein from "./custom functions/getProtien";
+import getLink from "./custom functions/getLink";
 
 export default function RandomRecipe({ recipeChosenHandler }) {
   async function clickHandler() {
     const randomID = Math.ceil(Math.random() * 4);
     const data = await getRecipe(randomID);
+    console.log(data);
+    data.payload.carb = await getCarb(data.payload.carbs_type);
+    data.payload.protein = await getProtein(data.payload.protein_type);
+    data.payload.link = await getLink(data.payload.recipe_link);
     recipeChosenHandler(data.payload);
   }
   return (
