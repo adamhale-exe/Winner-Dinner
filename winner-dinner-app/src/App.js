@@ -12,13 +12,21 @@ export default function App() {
     setRecipeChosen(true);
     console.log(currentRecipe);
   }
+  function recipeChosenFalse() {
+    setRecipeChosen(false);
+  }
   return (
     <main className="text-black">
       <div className="flex justify-center py-16">
         {recipeChosen ? null : (
           <RandomRecipe recipeChosenHandler={recipeChosenHandler} />
         )}
-        {recipeChosen ? <RecipeCard currentRecipe={currentRecipe} /> : null}
+        {recipeChosen ? (
+          <RecipeCard
+            currentRecipe={currentRecipe}
+            recipeChosenFalse={recipeChosenFalse}
+          />
+        ) : null}
         {/* <RecipeChooseForm /> */}
       </div>
     </main>
