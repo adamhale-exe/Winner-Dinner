@@ -3,9 +3,7 @@ import getRecipe from "./custom functions/getRecipe";
 export default function RandomRecipe({ recipeChosenHandler }) {
   async function clickHandler() {
     const randomID = Math.ceil(Math.random() * 4);
-    console.log(randomID);
     const data = await getRecipe(randomID);
-    console.log(data.payload);
     recipeChosenHandler(data.payload);
   }
   return (
