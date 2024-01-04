@@ -2,7 +2,7 @@ import { URL } from "../backendURL";
 
 export default async function getRecipe(input) {
   try {
-    const res = await fetch(`${URL}${input}`);
+    const res = await fetch(`${URL}/recipe/${input}`);
 
     if (!res.ok) {
       throw new Error(`Something went wrong, status: ${res.status}`);
