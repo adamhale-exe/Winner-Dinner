@@ -6,7 +6,7 @@ import getLink from "./custom functions/getLink";
 export default function RandomRecipe({ recipeChosenHandler }) {
   async function clickHandler() {
     const randomID = Math.ceil(Math.random() * 4);
-    const data = Promise(await getRecipe(randomID));
+    const data = await getRecipe(randomID);
     console.log(data);
     data.payload.carb = await getCarb(data.payload.carbs_type);
     data.payload.protein = await getProtein(data.payload.protein_type);
