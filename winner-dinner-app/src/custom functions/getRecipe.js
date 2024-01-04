@@ -1,8 +1,8 @@
-const url = "http://localhost:5000/recipes/";
+import { URL } from "../backendURL";
 
 export default async function getRecipe(input) {
   try {
-    const res = await fetch(`${url}${input}`);
+    const res = await fetch(`${URL}${input}`);
 
     if (!res.ok) {
       throw new Error(`Something went wrong, status: ${res.status}`);
