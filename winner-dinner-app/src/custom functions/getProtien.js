@@ -2,7 +2,7 @@ import { URL } from "../backendURL";
 
 export default async function getProtein(input) {
   try {
-    const res = await fetch(`${URL}/protein/${input}`);
+    const res = await fetch(`${URL}/proteins/${input}`);
 
     if (!res.ok) {
       throw new Error(`Something went wrong, status: ${res.status}`);

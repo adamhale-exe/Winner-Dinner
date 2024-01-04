@@ -2,7 +2,7 @@ import { URL } from "../backendURL";
 
 export default async function getCarb(input) {
   try {
-    const res = await fetch(`${URL}/carb/${input}`);
+    const res = await fetch(`${URL}/carbs/${input}`);
 
     if (!res.ok) {
       throw new Error(`Something went wrong, status: ${res.status}`);
