@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import RandomRecipe from "./RandomRecipe.jsx";
-import RecipeCard from "./RecipeCard.js";
-import RecipeChooseForm from "./RecipeChooseForm.jsx";
+import RandomRecipe from "./components/RandomRecipe.jsx";
+import RecipeCard from "./components/RecipeCard.js";
+import RecipeChooseForm from "./components/RecipeChooseForm.jsx";
 
 export default function App() {
   let [recipeChosen, setRecipeChosen] = useState(false);
@@ -17,6 +17,9 @@ export default function App() {
   }
   return (
     <main className="text-black">
+      <div>
+        <h1 className="text-4xl flex justify-center mt-6">Winner Dinner</h1>
+      </div>
       <div className="flex justify-center py-16">
         {recipeChosen ? null : (
           <RandomRecipe recipeChosenHandler={recipeChosenHandler} />
