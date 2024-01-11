@@ -18,7 +18,7 @@ export default function App() {
   return (
     <main className="text-black">
       <div>
-        <h1 className="text-4xl flex justify-center mt-6">Winner Dinner</h1>
+        <h1 className="text-5xl flex justify-center mt-6">Winner Dinner</h1>
       </div>
       <div className="flex justify-center py-16">
         {recipeChosen ? null : (
