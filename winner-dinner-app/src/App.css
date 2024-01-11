@@ -5,5 +5,5 @@
 body {
   color: #000;
   height: 100vh;
-  background-color: #f3c178;
+  background-image: url("../public/bgtile.png");
 }

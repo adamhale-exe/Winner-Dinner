@@ -17,7 +17,7 @@ export default function RandomRecipe({ recipeChosenHandler }) {
   return (
     <>
       <div
-        className="flex flex-col text-center justify-center rounded-2xl bg-white border-black border-4 mx-10 w-80 h-80"
+        className="flex flex-col text-center text-2xl justify-center rounded-2xl bg-orange-400 border-black border-4 mx-10 p-4"
         onClick={clickHandler}
       >
         <h2>Choose a random recipe!</h2>
