@@ -15,12 +15,12 @@ export default function RandomRecipe({ recipeChosenHandler }) {
   }
   return (
     <>
-      <div
-        className="flex flex-col text-center text-2xl justify-center rounded-2xl bg-orange-400 border-black border-4 mx-10 p-4"
+      <button
+        className="flex flex-col text-center text-2xl justify-center rounded-2xl bg-orange-400 border-black border-4 mx-10 p-4 shadow-block hover:shadow-blockhover"
         onClick={clickHandler}
       >
-        <h2>Choose a random recipe!</h2>
-      </div>
+        Choose a random recipe!
+      </button>
     </>
   );
 }
