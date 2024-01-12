@@ -1,7 +1,7 @@
 export default function RecipeChooseForm() {
   return (
     <>
-      <div className="flex flex-col text-center justify-center rounded-2xl bg-white border-black border-4 mx-10 w-80 h-80">
+      <div className="flex flex-col text-center justify-center rounded-2xl bg-orange-400 border-black border-4 mx-10 w-80 h-80">
         <h2>I&apos;m hungry for:</h2>
         <form className="flex flex-col items-center">
           <label className="m-2">
