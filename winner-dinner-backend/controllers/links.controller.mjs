@@ -1,5 +1,5 @@
 //will need to import links models from /models/links.js
-import * as linksModel from "../models/linksModel.js";
+import * as linksModel from "../models/linksModel.mjs";
 
 //first request to return all links
 export async function getLinks(req, res) {
