@@ -2,10 +2,10 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 
-import { proteinsRouter } from "./routes/proteins.router.js";
-import { carbsRouter } from "./routes/carbs.router.js";
-import { linksRouter } from "./routes/links.router.js";
-import { recipesRouter } from "./routes/recipes.router.js";
+import { proteinsRouter } from "./routes/proteins.router.mjs";
+import { carbsRouter } from "./routes/carbs.router.mjs";
+import { linksRouter } from "./routes/links.router.mjs";
+import { recipesRouter } from "./routes/recipes.router.mjs";
 
 const app = express();
 
