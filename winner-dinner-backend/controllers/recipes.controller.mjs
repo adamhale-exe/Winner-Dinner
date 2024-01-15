@@ -1,5 +1,5 @@
 //will need to import recipes models from /models/recipes.js
-import * as recipesModel from "../models/recipesModel.js";
+import * as recipesModel from "../models/recipesModel.mjs";
 
 //first request to return all recipes
 export async function getRecipes(req, res) {
