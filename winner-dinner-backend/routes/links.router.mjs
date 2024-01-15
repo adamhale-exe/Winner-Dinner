@@ -1,6 +1,6 @@
 import express from "express";
 
-import * as linksController from "../controllers/links.controller.js";
+import * as linksController from "../controllers/links.controller.mjs";
 
 export const linksRouter = express.Router();
 
