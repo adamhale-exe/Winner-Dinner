@@ -1,4 +1,4 @@
-import { pool } from "../index.js";
+import { pool } from "../index.mjs";
 
 async function resetDatabase() {
   try {

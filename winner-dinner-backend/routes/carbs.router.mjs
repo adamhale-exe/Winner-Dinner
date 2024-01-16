@@ -1,6 +1,6 @@
 import express from "express";
 
-import * as carbsController from "../controllers/carbs.controller.js";
+import * as carbsController from "../controllers/carbs.controller.mjs";
 
 export const carbsRouter = express.Router();
 

@@ -1,5 +1,5 @@
 // Import the 'pool' object so our helper functions can interact with the PostgreSQL database
-import { pool } from "../db/index.js";
+import { pool } from "../db/index.mjs";
 
 export async function getCarbs() {
   // Query the database and return all Carbs

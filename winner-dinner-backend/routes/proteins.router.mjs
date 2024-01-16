@@ -1,6 +1,6 @@
 import express from "express";
 
-import * as proteinsController from "../controllers/proteins.controller.js";
+import * as proteinsController from "../controllers/proteins.controller.mjs";
 
 export const proteinsRouter = express.Router();
 

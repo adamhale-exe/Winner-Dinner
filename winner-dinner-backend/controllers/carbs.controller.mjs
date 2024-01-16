@@ -1,5 +1,5 @@
 //will need to import carbs models from /models/carbs.js
-import * as carbsModel from "../models/carbsModel.js";
+import * as carbsModel from "../models/carbsModel.mjs";
 
 //first request to return all carbs
 export async function getCarbs(req, res) {

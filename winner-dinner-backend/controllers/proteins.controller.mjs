@@ -1,5 +1,5 @@
 //will need to import proteins models from /models/proteins.js
-import * as proteinsModel from "../models/proteinsModel.js";
+import * as proteinsModel from "../models/proteinsModel.mjs";
 
 //first request to return all proteins
 export async function getProteins(req, res) {

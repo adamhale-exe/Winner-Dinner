@@ -1,6 +1,6 @@
 import express from "express";
 
-import * as recipesController from "../controllers/recipes.controller.js";
+import * as recipesController from "../controllers/recipes.controller.mjs";
 
 export const recipesRouter = express.Router();
 
