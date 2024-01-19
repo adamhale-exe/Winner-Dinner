@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import RandomRecipe from "./components/RandomRecipe.jsx";
-import RecipeCard from "./components/RecipeCard.js";
+import RecipeCard from "./components/RecipeCard.jsx";
 import RecipeChooseForm from "./components/RecipeChooseForm.jsx";
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
             recipeChosenFalse={recipeChosenFalse}
           />
         ) : null}
-        {/* <RecipeChooseForm /> */}
+        <RecipeChooseForm />
       </div>
     </main>
   );

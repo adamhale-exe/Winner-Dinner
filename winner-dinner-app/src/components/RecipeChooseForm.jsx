@@ -1,8 +1,15 @@
 import TagButton from "./TagButton";
 
 const tagArr = [
-  "Quick", "Mexican", "Chips", "Chinese", "Pasta", "Cheesy", "Steak", "Broth"
-]
+  "Quick",
+  "Mexican",
+  "Chips",
+  "Chinese",
+  "Pasta",
+  "Cheesy",
+  "Steak",
+  "Broth",
+];
 
 export default function RecipeChooseForm() {
   return (
@@ -11,9 +18,11 @@ export default function RecipeChooseForm() {
         <h2>I&apos;m hungry for...</h2>
         {/* dynamically create a list of buttons.
          these buttons are tags from the database that can be used to filter recipes on submit*/}
-          <ul>
-          {tagArr.map(i => <TagButton tag={i} />)}
-          </ul>
+        <ul>
+          {tagArr.map((i) => (
+            <TagButton key={i} data={i} />
+          ))}
+        </ul>
         {/*
          I need to fetch an array of popular options
          iterate through the array with a .map to create the button element for each
