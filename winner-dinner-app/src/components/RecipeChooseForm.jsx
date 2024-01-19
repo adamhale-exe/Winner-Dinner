@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TagButton from "./TagButton";
 
 const tagArr = [
@@ -12,17 +13,36 @@ const tagArr = [
 ];
 
 export default function RecipeChooseForm() {
+  let [searchCritera, setSearchCriteria] = useState([]);
+  function addItem(itemName) {
+    setSearchCriteria([...searchCritera, itemName]);
+  }
+  function removeItem(itemName) {
+    const filteredList = searchCritera.filter((i) => i !== itemName);
+    setSearchCriteria(filteredList);
+  }
   return (
     <>
-      <div className="flex flex-col text-center justify-center rounded-2xl shadow-block bg-orange-400 border-black border-4 mx-10 w-80 h-80">
+      <div className="flex flex-col text-center justify-evenly rounded-2xl shadow-block bg-orange-400 border-black border-4 mx-10 w-80 h-80">
         <h2 className="text-2xl mb-2">I&apos;m hungry for...</h2>
         {/* dynamically create a list of buttons.
          these buttons are tags from the database that can be used to filter recipes on submit*/}
         <ul className="flex flex-wrap justify-center">
           {tagArr.map((i) => (
-            <TagButton key={i} data={i} />
+            <TagButton
+              key={i}
+              data={i}
+              addItem={addItem}
+              removeItem={removeItem}
+            />
           ))}
         </ul>
+        <button
+          className="bg-slate-400 p-3 m-4 rounded-2xl border-black border-4 shadow-block hover:shadow-blockhover"
+          onClick={() => console.log(searchCritera)}
+        >
+          Search!
+        </button>
         {/*
          I need to fetch an array of popular options
          iterate through the array with a .map to create the button element for each
