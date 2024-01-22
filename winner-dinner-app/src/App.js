@@ -20,7 +20,7 @@ export default function App() {
       <div>
         <h1 className="text-5xl flex justify-center mt-6">Winner Dinner</h1>
       </div>
-      <div className="flex justify-center py-16">
+      <div className="flex flex-col items-center py-16">
         {recipeChosen ? null : (
           <RandomRecipe recipeChosenHandler={recipeChosenHandler} />
         )}

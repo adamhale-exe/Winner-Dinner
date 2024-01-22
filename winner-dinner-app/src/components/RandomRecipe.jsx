@@ -16,7 +16,7 @@ export default function RandomRecipe({ recipeChosenHandler }) {
   return (
     <>
       <button
-        className="flex flex-col text-center text-2xl justify-center rounded-2xl bg-orange-400 border-black border-4 mx-10 p-4 shadow-block hover:shadow-blockhover"
+        className="text-center text-2xl rounded-2xl bg-orange-400 border-black border-4 p-4 shadow-block hover:shadow-blockhover m-auto mb-4"
         onClick={clickHandler}
       >
         Choose a random recipe!

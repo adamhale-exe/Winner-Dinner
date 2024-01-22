@@ -28,6 +28,8 @@ export default function RecipeChooseForm() {
         {/* dynamically create a list of buttons.
          these buttons are tags from the database that can be used to filter recipes on submit*/}
         <ul className="flex flex-wrap justify-center">
+          {/* I need to fetch an array of popular options
+             iterate through the array with a .map to create the button element for each*/}
           {tagArr.map((i) => (
             <TagButton
               key={i}
@@ -36,22 +38,16 @@ export default function RecipeChooseForm() {
               removeItem={removeItem}
             />
           ))}
+          {/* button has state, pressed, not pressed.
+               List the pressed buttons/selected options with the ability to remove them*/}
         </ul>
+        {/* submit button to search for things matching those criteria  */}
         <button
-          className="bg-slate-400 p-3 m-4 rounded-2xl border-black border-4 shadow-block hover:shadow-blockhover"
+          className="bg-slate-400 text-xl p-3 m-4 rounded-2xl border-black border-4 shadow-block hover:shadow-blockhover"
           onClick={() => console.log(searchCritera)}
         >
           Search!
         </button>
-        {/*
-         I need to fetch an array of popular options
-         iterate through the array with a .map to create the button element for each
-         button has state, pressed, not pressed.
-
-         List the pressed buttons/selected options with the ability to remove them
-
-         submit button to search for things matching those criteria
-           */}
       </div>
     </>
   );
