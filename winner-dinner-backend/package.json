@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config server.js",
-    "reset-database": "node -r dotenv/config db/scripts/reset-database.js",
-    "check-get": "node -r dotenv/config controllers/carbs.controller.js"
+    "dev": "nodemon -r dotenv/config server.mjs",
+    "reset-database": "node -r dotenv/config db/scripts/reset-database.mjs",
+    "check-get": "node -r dotenv/config controllers/carbs.controller.mjs"
   },
   "keywords": [],
   "author": "",
