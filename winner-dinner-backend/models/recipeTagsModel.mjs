@@ -59,18 +59,18 @@ export async function createRecipesTag(tag) {
   return result.rows[0];
 }
 
-export async function deleteRecipeTagByRecipeId(id) {
+export async function deleteRecipeTagByRecipeId(tag) {
   // Query the database to delete an tag and return the deleted tag or null
 
   // Define the SQL query for deleting the specified tag from the 'tags' table
   const queryText = `
         DELETE FROM tags
-        WHERE recipes = $1
+        WHERE recipes = $1 AND tags = $2
         RETURNING *;
       `;
 
   // Use the pool object to send the query to the database
-  const result = await pool.query(queryText, [id]);
+  const result = await pool.query(queryText, [tag.recipes, tag.tags]);
 
   // The rows property of the result object contains the deleted record
   return result.rows[0] || null;
