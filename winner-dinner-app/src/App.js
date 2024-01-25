@@ -3,6 +3,7 @@ import "./App.css";
 import RandomRecipe from "./components/RandomRecipe.jsx";
 import RecipeCard from "./components/RecipeCard.jsx";
 import RecipeChooseForm from "./components/RecipeChooseForm.jsx";
+import getTotalRecipes from "./customHooks/getTotalRecipes.js";
 
 export default function App() {
   let [recipeChosen, setRecipeChosen] = useState(false);
@@ -15,6 +16,10 @@ export default function App() {
   function recipeChosenFalse() {
     setRecipeChosen(false);
   }
+  const output = getTotalRecipes();
+  Promise.resolve(output);
+  console.log(output);
+
   return (
     <main className="text-black">
       <div>
