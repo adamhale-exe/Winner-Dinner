@@ -13,7 +13,6 @@ export default function App() {
   function recipeChosenHandler(data) {
     setCurrentRecipe(data);
     setRecipeChosen(true);
-    console.log(currentRecipe);
   }
   function recipeChosenFalse() {
     setRecipeChosen(false);
@@ -37,7 +36,7 @@ export default function App() {
             recipeChosenFalse={recipeChosenFalse}
           />
         ) : null}
-        <RecipeChooseForm />
+        {recipeChosen ? null : <RecipeChooseForm recipeChosenHandler={recipeChosenHandler} />}
       </div>
     </main>
   );

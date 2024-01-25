@@ -16,7 +16,7 @@ export default function RandomRecipe({ recipeChosenHandler, totalRecipes }) {
   return (
     <>
       <button
-        className="text-center text-2xl rounded-2xl bg-orange-400 border-black border-4 p-4 shadow-block hover:shadow-blockhover m-auto mb-4"
+        className="text-center text-2xl rounded-2xl bg-orange-400 border-black border-4 p-4 shadow-block hover:shadow-blockhover m-auto"
         onClick={clickHandler}
       >
         Choose a random recipe!

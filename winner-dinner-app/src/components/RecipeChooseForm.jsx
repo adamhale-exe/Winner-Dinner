@@ -12,7 +12,7 @@ const tagArr = [
   "Broth",
 ];
 
-export default function RecipeChooseForm() {
+export default function RecipeChooseForm({ recipeChosenHandler }) {
   let [searchCritera, setSearchCriteria] = useState([]);
   function addItem(itemName) {
     setSearchCriteria([...searchCritera, itemName]);
@@ -23,7 +23,7 @@ export default function RecipeChooseForm() {
   }
   return (
     <>
-      <div className="flex flex-col text-center justify-evenly rounded-2xl shadow-block bg-orange-400 border-black border-4 mx-10 w-80 h-80">
+      <div className="flex flex-col text-center justify-evenly rounded-2xl shadow-block bg-orange-400 border-black border-4 mx-10 w-80 h-80 mt-4">
         <h2 className="text-2xl mb-2">I&apos;m hungry for...</h2>
         {/* dynamically create a list of buttons.
          these buttons are tags from the database that can be used to filter recipes on submit*/}
