@@ -5,6 +5,8 @@ import RecipeCard from "./components/RecipeCard.jsx";
 import RecipeChooseForm from "./components/RecipeChooseForm.jsx";
 import getTotalRecipes from "./customHooks/getTotalRecipes.js";
 
+const totalRecipeCount = await getTotalRecipes();
+
 export default function App() {
   let [recipeChosen, setRecipeChosen] = useState(false);
   let [currentRecipe, setCurrentRecipe] = useState({ name: "food" });
@@ -16,9 +18,6 @@ export default function App() {
   function recipeChosenFalse() {
     setRecipeChosen(false);
   }
-  const output = getTotalRecipes();
-  Promise.resolve(output);
-  console.log(output);
 
   return (
     <main className="text-black">
@@ -27,7 +26,10 @@ export default function App() {
       </div>
       <div className="flex flex-col items-center py-16">
         {recipeChosen ? null : (
-          <RandomRecipe recipeChosenHandler={recipeChosenHandler} />
+          <RandomRecipe
+            recipeChosenHandler={recipeChosenHandler}
+            totalRecipes={totalRecipeCount}
+          />
         )}
         {recipeChosen ? (
           <RecipeCard

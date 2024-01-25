@@ -12,5 +12,6 @@ export default async function getCarb(input) {
     return data;
   } catch (error) {
     console.log(error);
+    return { payload: "" };
   }
 }

@@ -3,9 +3,9 @@ import getCarb from "../customHooks/getCarb";
 import getProtein from "../customHooks/getProtien";
 import getLink from "../customHooks/getLink";
 
-export default function RandomRecipe({ recipeChosenHandler }) {
+export default function RandomRecipe({ recipeChosenHandler, totalRecipes }) {
   async function clickHandler() {
-    const randomID = Math.ceil(Math.random() * 4);
+    const randomID = Math.ceil(Math.random() * totalRecipes);
     const data = await getRecipe(randomID);
     console.log(data);
     data.payload.carb = await getCarb(data.payload.carbs_type);
