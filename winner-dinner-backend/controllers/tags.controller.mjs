@@ -24,7 +24,7 @@ export async function getTagById(req, res) {
 
 // create a new tag in the list
 export async function createTag(req, res) {
-  if (Object.keys(req.body).length !== 2) {
+  if (Object.keys(req.body).length !== 1) {
     res.status(400).json({
       success: false,
       error: "Invalid request 😞. Please review and try again!",

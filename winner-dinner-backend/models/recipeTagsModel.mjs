@@ -70,7 +70,7 @@ export async function deleteRecipeTagByRecipeId(tag) {
       `;
 
   // Use the pool object to send the query to the database
-  const result = await pool.query(queryText, [tag.recipes, tag.tags]);
+  const result = await pool.query(queryText, [tag.recipeid, tag.tagid]);
 
   // The rows property of the result object contains the deleted record
   return result.rows[0] || null;
