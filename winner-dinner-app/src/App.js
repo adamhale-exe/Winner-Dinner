@@ -36,7 +36,7 @@ export default function App() {
             recipeChosenFalse={recipeChosenFalse}
           />
         ) : null}
-        {recipeChosen ? null : <RecipeChooseForm recipeChosenHandler={recipeChosenHandler} />}
+        {/* {recipeChosen ? null : <RecipeChooseForm recipeChosenHandler={recipeChosenHandler} />} */}
       </div>
     </main>
   );
