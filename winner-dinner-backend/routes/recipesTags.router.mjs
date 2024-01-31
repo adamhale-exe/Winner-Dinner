@@ -12,6 +12,4 @@ recipesTagsRouter.get("/recipeid/:id", recipesTagsController.getTagsByRecipeId);
 
 recipesTagsRouter.post("/", recipesTagsController.createRecipesTag);
 
-recipesTagsRouter.patch("/:id", recipesTagsController.updateRecipeById);
-
-recipesTagsRouter.delete("/:id", recipesTagsController.deleteRecipeById);
+recipesTagsRouter.delete("/", recipesTagsController.deleteRecipeById);
