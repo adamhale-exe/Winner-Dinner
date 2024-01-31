@@ -6,6 +6,7 @@ import { proteinsRouter } from "./routes/proteins.router.mjs";
 import { carbsRouter } from "./routes/carbs.router.mjs";
 import { linksRouter } from "./routes/links.router.mjs";
 import { recipesRouter } from "./routes/recipes.router.mjs";
+import { tagsRouter } from "./routes/tags.router.mjs";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/carbs", carbsRouter);
 app.use("/proteins", proteinsRouter);
 app.use("/links", linksRouter);
 app.use("/recipes", recipesRouter);
+app.use("/tags", tagsRouter);
 
 app.use(function (_req, res, _next) {
   res.status(404).json({
