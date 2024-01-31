@@ -66,15 +66,16 @@ export async function deleteRecipeTagByRecipeId(req, res) {
       error: "Invalid request 😞. Please review and try again!",
     });
   } else {
-  const recipeTagPair = req.body;
-  const result = await tagsModel.deleteRecipeTagByRecipeId(recipeTagPair);
-  if (result != null) {
-    res.status(200).json({ success: true, payload: result });
-  } else {
-    res.status(404).json({
-      success: false,
-      error:
-        "We couldn't find what you were looking for 😞. Does that recipe/tag exist?",
-    });
+    const recipeTagPair = req.body;
+    const result = await tagsModel.deleteRecipeTagByRecipeId(recipeTagPair);
+    if (result != null) {
+      res.status(200).json({ success: true, payload: result });
+    } else {
+      res.status(404).json({
+        success: false,
+        error:
+          "We couldn't find what you were looking for 😞. Does that recipe/tag exist?",
+      });
+    }
   }
 }
