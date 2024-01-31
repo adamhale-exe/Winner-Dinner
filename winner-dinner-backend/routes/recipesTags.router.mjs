@@ -10,7 +10,7 @@ recipesTagsRouter.get("/tagid/:id", recipesTagsController.getRecipesByTagId);
 
 recipesTagsRouter.get("/recipeid/:id", recipesTagsController.getTagsByRecipeId);
 
-recipesTagsRouter.post("/", recipesTagsController.createRecipe);
+recipesTagsRouter.post("/", recipesTagsController.createRecipesTag);
 
 recipesTagsRouter.patch("/:id", recipesTagsController.updateRecipeById);
 

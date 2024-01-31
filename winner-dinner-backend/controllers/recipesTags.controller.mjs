@@ -22,7 +22,7 @@ export async function getRecipesByTagId(req, res) {
   }
 }
 
-//return specific tag by recipeid
+//return all tags by recipeid
 export async function getTagsByRecipeId(req, res) {
   const id = Number(req.params.id);
   const result = await tagsModel.getTagsByRecipeId(id);
@@ -34,5 +34,26 @@ export async function getTagsByRecipeId(req, res) {
       error:
         "We couldn't find what you were looking for 😞. Does that tag exist?",
     });
+  }
+}
+
+// create a new recipe/tag pair in the list
+export async function createRecipesTag(req, res) {
+  if (Object.keys(req.body).length !== 2) {
+    res.status(400).json({
+      success: false,
+      error: "Invalid request 😞. Please review and try again!",
+    });
+  } else {
+    const newTag = req.body;
+    const result = await tagsModel.createRecipesTag(newTag);
+    if (result != null) {
+      res.status(201).json({ success: true, payload: result });
+    } else {
+      res.status(500).json({
+        success: false,
+        error: "We couldn't add the tag 😞. Try again later!",
+      });
+    }
   }
 }
