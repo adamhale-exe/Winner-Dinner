@@ -6,9 +6,9 @@ export const recipesTagsRouter = express.Router();
 
 recipesTagsRouter.get("/", recipesTagsController.getRecipesTags);
 
-recipesTagsRouter.get("/recipeid/:id", recipesTagsController.getRecipesByTagId);
+recipesTagsRouter.get("/tagid/:id", recipesTagsController.getRecipesByTagId);
 
-recipesTagsRouter.get("/tagid/:id", recipesTagsController.getRecipeById);
+recipesTagsRouter.get("/recipeid/:id", recipesTagsController.getTagsByRecipeId);
 
 recipesTagsRouter.post("/", recipesTagsController.createRecipe);
 
