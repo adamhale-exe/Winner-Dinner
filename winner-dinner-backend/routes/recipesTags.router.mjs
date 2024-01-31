@@ -4,9 +4,11 @@ import * as recipesTagsController from "../controllers/recipesTags.controller.mj
 
 export const recipesTagsRouter = express.Router();
 
-recipesTagsRouter.get("/", recipesTagsController.getRecipes);
+recipesTagsRouter.get("/", recipesTagsController.getRecipesTags);
 
-recipesTagsRouter.get("/:id", recipesTagsController.getRecipeById);
+recipesTagsRouter.get("/recipeid/:id", recipesTagsController.getRecipesByTagId);
+
+recipesTagsRouter.get("/tagid/:id", recipesTagsController.getRecipeById);
 
 recipesTagsRouter.post("/", recipesTagsController.createRecipe);
 
