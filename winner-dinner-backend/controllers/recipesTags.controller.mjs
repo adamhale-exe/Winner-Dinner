@@ -7,10 +7,25 @@ export async function getRecipesTags(req, res) {
   res.status(200).json({ success: true, payload: result });
 }
 
-//return specific tag by id
+//return all recipes by tagid
 export async function getRecipesByTagId(req, res) {
   const id = Number(req.params.id);
   const result = await tagsModel.getRecipesByTagId(id);
+  if (result != null) {
+    res.status(200).json({ success: true, payload: result });
+  } else {
+    res.status(404).json({
+      success: false,
+      error:
+        "We couldn't find what you were looking for 😞. Does that tag exist?",
+    });
+  }
+}
+
+//return specific tag by recipeid
+export async function getTagsByRecipeId(req, res) {
+  const id = Number(req.params.id);
+  const result = await tagsModel.getTagsByRecipeId(id);
   if (result != null) {
     res.status(200).json({ success: true, payload: result });
   } else {
