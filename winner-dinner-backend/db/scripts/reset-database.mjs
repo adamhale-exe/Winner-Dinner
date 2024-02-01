@@ -76,7 +76,10 @@ async function resetDatabase() {
         ('None','None'),
         ('Salmon','Fillet'),
         ('Shrimp','Whole Shrimp'),
-        ('Tofu','Tofu')
+        ('Tofu','Tofu'),
+        ('Butternut Squash','Butternut Squash'),
+        ('Lentils','Red Lentils'),
+        ('Mozzarella','Mozzarella')
         ;
     `);
 
@@ -141,15 +144,15 @@ async function resetDatabase() {
           ('Salmon with Lemon Dill Sauce', 'Medium', 8, 6, 8),
           ('Mushroom Risotto', 'Medium', 7, 7, 9),
           ('Cajun Shrimp and Sausage Skewers', 'Quick', 9, 5, 10),
-          ('Caprese Salad with Balsamic Glaze', 'Quick', 7, 5, 11),
+          ('Caprese Salad with Balsamic Glaze', 'Quick', 13, 5, 11),
           ('Honey Mustard Glazed Chicken', 'Medium', 6, 8, 12),
           ('Vegetable Stir-Fry with Tofu', 'Quick', 10, 3, 13),
           ('Greek Salad with Grilled Chicken', 'Quick', 6, 5, 14),
-          ('Lentil Soup', 'Long', 7, 5, 15),
+          ('Lentil Soup', 'Long', 12, 5, 15),
           ('BBQ Pulled Pork Sandwiches', 'Long', 3, 9, 16),
           ('Quinoa and Black Bean Bowl', 'Quick', 7, 6, 17),
           ('Teriyaki Glazed Salmon', 'Medium', 8, 3, 18),
-          ('Butternut Squash Soup', 'Long', 7, 5, 19),
+          ('Butternut Squash Soup', 'Long', 11, 5, 19),
           ('Eggplant Parmesan', 'Medium', 7, 2, 20),
           ('Thai Red Curry with Tofu', 'Medium', 10, 3, 21),
           ('Mango Salsa Chicken', 'Quick', 6, 3, 22),
