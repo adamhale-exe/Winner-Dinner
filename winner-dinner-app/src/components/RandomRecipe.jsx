@@ -1,7 +1,4 @@
 import getRecipe from "../customHooks/getRecipe";
-import getCarb from "../customHooks/getCarb";
-import getProtein from "../customHooks/getProtien";
-import getLink from "../customHooks/getLink";
 
 export default function RandomRecipe({ recipeChosenHandler, totalRecipes }) {
   async function clickHandler() {
