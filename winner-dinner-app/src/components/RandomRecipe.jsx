@@ -8,9 +8,6 @@ export default function RandomRecipe({ recipeChosenHandler, totalRecipes }) {
     const randomID = Math.ceil(Math.random() * totalRecipes);
     const data = await getRecipe(randomID);
     console.log(data);
-    data.payload.carb = await getCarb(data.payload.carbs_type);
-    data.payload.protein = await getProtein(data.payload.protein_type);
-    data.payload.link = await getLink(data.payload.recipe_link);
     recipeChosenHandler(data.payload);
   }
   return (

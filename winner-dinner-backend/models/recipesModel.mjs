@@ -23,7 +23,7 @@ export async function getRecipeById(id) {
   INNER JOIN proteins ON recipes.protein_type = proteins.id
   INNER JOIN carbs ON recipes.carbs_type = carbs.id
   INNER JOIN links ON recipes.recipe_link = links.id
-  WHERE recipes.id = 1;
+  WHERE recipes.id = $1;
   `;
 
   // Use the pool object to send the query to the database

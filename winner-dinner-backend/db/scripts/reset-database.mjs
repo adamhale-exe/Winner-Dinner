@@ -72,7 +72,12 @@ async function resetDatabase() {
         ('Pork', 'Sausage'),
         ('Beef', 'Steak'),
         ('Beef', 'Stewing Beef'),
-        ('Chicken', 'Breast');
+        ('Chicken', 'Breast'),
+        ('None','None'),
+        ('Salmon','Fillet'),
+        ('Shrimp','Whole Shrimp'),
+        ('Tofu','Tofu')
+        ;
     `);
 
     // Seed the carbs table
@@ -81,8 +86,13 @@ async function resetDatabase() {
       VALUES 
         ('Potato', 'Fries'),
         ('Pasta', 'Spaghetti'),
-        ('Rice', 'Rice'),
-        ('Pastry', 'Puff Pastry');
+        ('Rice', 'White Rice'),
+        ('Pastry', 'Puff Pastry'),
+        ('None','None'),
+        ('Quinoa','None'),
+        ('Arborio Rice', 'Arborio Rice'),
+        ('Sweet Potatoes','Sweet Potatoes'),
+        ('Burger Buns','Burger Buns');
     `);
 
     // Seed the links table
@@ -94,8 +104,28 @@ async function resetDatabase() {
           ('https://www.bbcgoodfood.com/recipes/super-sausage-rolls'),
           ('https://www.bbcgoodfood.com/recipes/jerk-chicken-rice-peas'),
           ('https://www.bbcgoodfood.com/recipes/mexican-beef-chilli'),
-          ('https://www.bbcgoodfood.com/recipes/chinese-chicken-curry');
-    `);
+          ('https://www.bbcgoodfood.com/recipes/chinese-chicken-curry'),
+          ('https://www.bbcgoodfood.com/recipes/healthy-pasta-primavera'),
+          ('https://laughingspatula.com/baked-salmon-with-lemon-dill-sauce/'),
+          ('https://www.bbcgoodfood.com/recipes/mushroom-risotto'),
+          ('https://whatgreatgrandmaate.com/cajun-shrimp-sausage-skewers/'),
+          ('https://www.onceuponachef.com/recipes/caprese-salad-balsamic-glaze.html'),
+          ('https://thesavvyspoon.com/2022/01/03/30-minute-honey-mustard-glazed-chicken/'),
+          ('https://www.bbcgoodfood.com/recipes/tofu-stir-fry'),
+          ('https://www.themediterraneandish.com/greek-grilled-chicken-salad-recipe/'),
+          ('https://www.bbcgoodfood.com/recipes/lentil-soup'),
+          ('https://www.recipetineats.com/slow-cooker-bbq-pulled-pork-sandwich/'),
+          ('https://www.eatingwell.com/recipe/260726/black-bean-quinoa-buddha-bowl/'),
+          ('https://natashaskitchen.com/teriyaki-salmon-recipe/'),
+          ('https://www.bbcgoodfood.com/recipes/butternut-squash-soup-chilli-creme-fraiche'),
+          ('https://www.simplyrecipes.com/recipes/eggplant_parmesan/'),
+          ('https://jessicainthekitchen.com/vegan-thai-red-curry-with-tofu/'),
+          ('https://www.lecremedelacrumb.com/mango-salsa-chicken/'),
+          ('https://feelgoodfoodie.net/recipe/spinach-feta-stuffed-chicken/'),
+          ('https://www.thefieryvegetarian.com/chickpea-spinach-curry/'),
+          ('https://thecheekychickpea.com/pesto-pasta-with-cherry-tomatoes/'),
+          ('https://www.dinneratthezoo.com/beef-and-broccoli-stir-fry/');
+          `);
 
     // Seed the recipes table
     await pool.query(`
@@ -105,8 +135,28 @@ async function resetDatabase() {
           ('Steak and Fries', 'Quick', 4, 1, 2),
           ('Sausage Roll', 'Medium', 3, 4, 3),
           ('Jerk Chicken, Rice and Peas', 'Long', 2, 3, 4),
-          ('Mexican beef chilli', 'Long', 5, NULL, 5),
-          ('Chinese chicken curry', 'Medium', 6, 3, 6 );
+          ('Mexican beef chilli', 'Long', 5, 5, 5),
+          ('Chinese chicken curry', 'Medium', 6, 3, 6 ),
+          ('Vegetarian Pasta Primavera', 'Quick', 7, 2, 7),
+          ('Salmon with Lemon Dill Sauce', 'Medium', 8, 6, 8),
+          ('Mushroom Risotto', 'Medium', 7, 7, 9),
+          ('Cajun Shrimp and Sausage Skewers', 'Quick', 9, 5, 10),
+          ('Caprese Salad with Balsamic Glaze', 'Quick', 7, 5, 11),
+          ('Honey Mustard Glazed Chicken', 'Medium', 6, 8, 12),
+          ('Vegetable Stir-Fry with Tofu', 'Quick', 10, 3, 13),
+          ('Greek Salad with Grilled Chicken', 'Quick', 6, 5, 14),
+          ('Lentil Soup', 'Long', 7, 5, 15),
+          ('BBQ Pulled Pork Sandwiches', 'Long', 3, 9, 16),
+          ('Quinoa and Black Bean Bowl', 'Quick', 7, 6, 17),
+          ('Teriyaki Glazed Salmon', 'Medium', 8, 3, 18),
+          ('Butternut Squash Soup', 'Long', 7, 5, 19),
+          ('Eggplant Parmesan', 'Medium', 7, 2, 20),
+          ('Thai Red Curry with Tofu', 'Medium', 10, 3, 21),
+          ('Mango Salsa Chicken', 'Quick', 6, 3, 22),
+          ('Spinach and Feta Stuffed Chicken Breast', 'Medium', 6, 5, 23),
+          ('Chickpea and Spinach Curry', 'Medium', 7, 3, 24),
+          ('Pesto Pasta with Cherry Tomatoes', 'Quick', 7, 2, 25),
+          ('Beef and Broccoli Stir-Fry', 'Quick', 5, 3, 26);
     `);
 
     // Seed the tags table

@@ -21,17 +21,15 @@ export default function RecipeCard({ currentRecipe, recipeChosenFalse }) {
             <span className="material-symbols-rounded self-center">
               Kitchen
             </span>
-            <h3>{currentRecipe.carb.payload.carb}</h3>
-            <h3>{currentRecipe.protein.payload.protein}</h3>
+            <h3>{(currentRecipe.carb = "None" ? null : currentRecipe.carb)}</h3>
+            <h3>
+              {(currentRecipe.protein = "None" ? null : currentRecipe.protein)}
+            </h3>
           </div>
         </div>
 
         <button className="bg-slate-400 p-3 m-4 rounded-2xl border-black border-4 shadow-block hover:shadow-blockhover">
-          <a
-            href={currentRecipe.link.payload.url}
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href={currentRecipe.url} rel="noreferrer" target="_blank">
             Recipe link
           </a>
         </button>
