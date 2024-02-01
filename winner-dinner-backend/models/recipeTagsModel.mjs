@@ -17,7 +17,9 @@ export async function getRecipesTags() {
 export async function getRecipesByTagId(id) {
   // Query the database and return the tag with a matching id or null
   if (!Array.isArray(id.searchArray) || id.searchArray.length === 0) {
-    throw new Error("Invalid input for tagIds");
+    throw new Error(`Invalid input for tagIds. Input expected in the following format: {
+      "searchArray": ["tagName","tagName"]
+    }`);
   }
   // Define the SQL query to fetch the recipes with the specified tags from the 'recipes_tags' table
   const queryText = `
