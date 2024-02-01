@@ -9,13 +9,8 @@ export async function getRecipesTags(req, res) {
 
 //return all recipes by tagid
 export async function getRecipesByTagId(req, res) {
-  if (Object.keys(req.body).length > 1) {
-    res.status(400).json({
-      success: false,
-      error: "Invalid request 😞. Please review and try again!",
-    });
-  }
-  const id = req.body;
+  const id = req.query.tag;
+  console.log(id);
   const result = await recipeTagsModel.getRecipesByTagId(id);
   if (result != null) {
     res.status(200).json({ success: true, payload: result });

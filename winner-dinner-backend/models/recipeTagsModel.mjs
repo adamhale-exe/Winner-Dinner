@@ -14,9 +14,9 @@ export async function getRecipesTags() {
   return result.rows;
 }
 
-export async function getRecipesByTagId(id) {
+export async function getRecipesByTagId(tags) {
   // Query the database and return the tag with a matching id or null
-  if (!Array.isArray(id.searchArray) || id.searchArray.length === 0) {
+  if (!Array.isArray(tags) || tags.length === 0) {
     throw new Error(`Invalid input for tagIds. Input expected in the following format: {
       "searchArray": ["tagName","tagName"]
     }`);
@@ -33,7 +33,7 @@ export async function getRecipesByTagId(id) {
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
-  const result = await pool.query(queryText, [id.searchArray]);
+  const result = await pool.query(queryText, [tags]);
 
   // The rows property of the result object contains the retrieved records
   return result.rows || null;
