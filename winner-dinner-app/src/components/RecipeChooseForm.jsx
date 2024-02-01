@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TagButton from "./TagButton";
 import getRecipeByTag from "../customHooks/getRecipeByTag";
+import getRecipe from "../customHooks/getRecipe";
 
 const tagArr = [
   "Italian",
@@ -24,7 +25,8 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
   }
   async function clickHandler(tagArr) {
     const output = await getRecipeByTag(tagArr);
-    console.log(output);
+    const data = await getRecipe(output.payload[0].recipes);
+    recipeChosenHandler(data.payload);
   }
   return (
     <>

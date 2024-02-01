@@ -21,9 +21,9 @@ export default function RecipeCard({ currentRecipe, recipeChosenFalse }) {
             <span className="material-symbols-rounded self-center">
               Kitchen
             </span>
-            <h3>{(currentRecipe.carb = "None" ? null : currentRecipe.carb)}</h3>
+            <h3>{currentRecipe.carb === "None" ? null : currentRecipe.carb}</h3>
             <h3>
-              {(currentRecipe.protein = "None" ? null : currentRecipe.protein)}
+              {currentRecipe.protein === "None" ? null : currentRecipe.protein}
             </h3>
           </div>
         </div>
