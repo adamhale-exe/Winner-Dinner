@@ -2,17 +2,9 @@ import { useState } from "react";
 import TagButton from "./TagButton";
 import getRecipeByTag from "../customHooks/getRecipeByTag";
 import getRecipe from "../customHooks/getRecipe";
+import getTags from "../customHooks/getTags";
 
-const tagArr = [
-  "Italian",
-  "Chinese",
-  "Spicy",
-  "Mexican",
-  "Chips",
-  "Quick",
-  "Cheesy",
-  "Pastry",
-];
+const tagArr = await getTags();
 
 export default function RecipeChooseForm({ recipeChosenHandler }) {
   let [searchCritera, setSearchCriteria] = useState([]);
@@ -25,7 +17,13 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
   }
   async function clickHandler(tagArr) {
     const output = await getRecipeByTag(tagArr);
-    const data = await getRecipe(output.payload[0].recipes);
+    const totalMatches = output.payload[0].tag_count;
+    const filteredOutput = output.payload.filter(
+      (i) => i.tag_count === totalMatches
+    );
+    console.log(filteredOutput);
+    const randomID = Math.floor(Math.random() * filteredOutput.length);
+    const data = await getRecipe(filteredOutput[randomID].recipes);
     recipeChosenHandler(data.payload);
   }
   return (
@@ -39,8 +37,8 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
              iterate through the array with a .map to create the button element for each*/}
           {tagArr.map((i) => (
             <TagButton
-              key={i}
-              data={i}
+              key={i.id}
+              data={i.name}
               addItem={addItem}
               removeItem={removeItem}
             />
