@@ -18,7 +18,7 @@ export async function getRecipesByTagId(id) {
   // Query the database and return the tag with a matching id or null
 
   // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText = "SELECT * FROM tags WHERE tags = $1";
+  const queryText = "SELECT * FROM recipes_tags WHERE tags IN ($1)";
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
@@ -32,7 +32,7 @@ export async function getTagsByRecipeId(id) {
   // Query the database and return the tag with a matching id or null
 
   // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText = "SELECT * FROM tags WHERE recipes = $1";
+  const queryText = "SELECT * FROM recipes_tags WHERE recipes = $1";
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
@@ -64,7 +64,7 @@ export async function deleteRecipeTagByRecipeId(tag) {
 
   // Define the SQL query for deleting the specified tag from the 'tags' table
   const queryText = `
-        DELETE FROM tags
+        DELETE FROM recipes_tags
         WHERE recipes = $1 AND tags = $2
         RETURNING *;
       `;
