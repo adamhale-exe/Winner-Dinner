@@ -19,14 +19,15 @@ export async function getRecipesByTagId(id) {
   if (!Array.isArray(id.searchArray) || id.searchArray.length === 0) {
     throw new Error("Invalid input for tagIds");
   }
-  // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText =
-  "SELECT recipes_tags.recipes, COUNT(recipes_tags.tags) AS tag_count " +
-    "FROM recipes_tags " +
-    "WHERE recipes_tags.tags = ANY($1) " +
-    "GROUP BY recipes_tags.recipes " +
-    "ORDER BY tag_count DESC";
-    // "SELECT * FROM recipes_tags WHERE tags = ANY($1) GROUP BY recipes, tags";
+  // Define the SQL query to fetch the recipes with the specified tags from the 'recipes_tags' table
+  const queryText = `
+    SELECT recipes_tags.recipes, COUNT(recipes_tags.tags) AS tag_count 
+    FROM recipes_tags 
+    JOIN tags ON recipes_tags.tags = tags.id
+    WHERE tags.name = ANY($1) 
+    GROUP BY recipes_tags.recipes 
+    ORDER BY tag_count DESC;
+    `;
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
@@ -39,8 +40,10 @@ export async function getRecipesByTagId(id) {
 export async function getTagsByRecipeId(id) {
   // Query the database and return the tag with a matching id or null
 
-  // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText = "SELECT * FROM recipes_tags WHERE recipes = $1";
+  // Define the SQL query to fetch the tagids matching the specfied recipe id from the 'recipe_tags' table
+  const queryText = `
+  SELECT * FROM recipes_tags 
+  WHERE recipes = $1;`;
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
