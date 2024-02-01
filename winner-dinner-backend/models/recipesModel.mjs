@@ -18,7 +18,13 @@ export async function getRecipeById(id) {
   // Query the database and return the recipe with a matching id or null
 
   // Define the SQL query to fetch the recipe with the specified id from the 'recipes' table
-  const queryText = "SELECT * FROM recipes WHERE id = $1";
+  const queryText = `
+  SELECT recipes.name, recipes.time, proteins.protein, carbs.carb, links.url FROM recipes
+  INNER JOIN proteins ON recipes.protein_type = proteins.id
+  INNER JOIN carbs ON recipes.carbs_type = carbs.id
+  INNER JOIN links ON recipes.recipe_link = links.id
+  WHERE recipes.id = 1;
+  `;
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
