@@ -14,32 +14,45 @@ export async function getRecipesTags() {
   return result.rows;
 }
 
-export async function getRecipesByTagId(id) {
+export async function getRecipesByTagId(tags) {
   // Query the database and return the tag with a matching id or null
-
-  // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText = "SELECT * FROM tags WHERE tags = $1";
+  if (!Array.isArray(tags) || tags.length === 0) {
+    throw new Error(`Invalid input for tagIds. Input expected in the following format: {
+      "searchArray": ["tagName","tagName"]
+    }`);
+  }
+  // Define the SQL query to fetch the recipes with the specified tags from the 'recipes_tags' table
+  const queryText = `
+    SELECT recipes_tags.recipes, COUNT(recipes_tags.tags) AS tag_count 
+    FROM recipes_tags 
+    JOIN tags ON recipes_tags.tags = tags.id
+    WHERE tags.name = ANY($1) 
+    GROUP BY recipes_tags.recipes 
+    ORDER BY tag_count DESC;
+    `;
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
-  const result = await pool.query(queryText, [id]);
+  const result = await pool.query(queryText, [tags]);
 
   // The rows property of the result object contains the retrieved records
-  return result.rows[0] || null;
+  return result.rows || null;
 }
 
 export async function getTagsByRecipeId(id) {
   // Query the database and return the tag with a matching id or null
 
-  // Define the SQL query to fetch the tag with the specified id from the 'tags' table
-  const queryText = "SELECT * FROM tags WHERE recipes = $1";
+  // Define the SQL query to fetch the tagids matching the specfied recipe id from the 'recipe_tags' table
+  const queryText = `
+  SELECT * FROM recipes_tags 
+  WHERE recipes = $1;`;
 
   // Use the pool object to send the query to the database
   // passing the id as a parameter to prevent SQL injection
   const result = await pool.query(queryText, [id]);
 
   // The rows property of the result object contains the retrieved records
-  return result.rows[0] || null;
+  return result.rows || null;
 }
 
 export async function createRecipesTag(tag) {
@@ -64,7 +77,7 @@ export async function deleteRecipeTagByRecipeId(tag) {
 
   // Define the SQL query for deleting the specified tag from the 'tags' table
   const queryText = `
-        DELETE FROM tags
+        DELETE FROM recipes_tags
         WHERE recipes = $1 AND tags = $2
         RETURNING *;
       `;

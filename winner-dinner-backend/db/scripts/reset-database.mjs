@@ -128,12 +128,12 @@ async function resetDatabase() {
     INSERT INTO recipes_tags (recipes,tags)
     VALUES 
       (1,1),
-      (2,5),
-      (2,6),
-      (3,8),
-      (4,3),
-      (5,3),
       (5,4),
+      (2,5),
+      (4,3),
+      (3,8),
+      (2,6),
+      (5,3),
       (6,2);
     `);
 

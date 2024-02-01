@@ -3,14 +3,15 @@ import * as recipeTagsModel from "../models/recipeTagsModel.mjs";
 
 //first request to return all tags
 export async function getRecipesTags(req, res) {
-  const result = await tagsModel.getRecipeTags();
+  const result = await recipeTagsModel.getRecipesTags();
   res.status(200).json({ success: true, payload: result });
 }
 
 //return all recipes by tagid
 export async function getRecipesByTagId(req, res) {
-  const id = Number(req.params.id);
-  const result = await tagsModel.getRecipesByTagId(id);
+  const id = req.query.tag;
+  console.log(id);
+  const result = await recipeTagsModel.getRecipesByTagId(id);
   if (result != null) {
     res.status(200).json({ success: true, payload: result });
   } else {
@@ -24,8 +25,14 @@ export async function getRecipesByTagId(req, res) {
 
 //return all tags by recipeid
 export async function getTagsByRecipeId(req, res) {
-  const id = Number(req.params.id);
-  const result = await tagsModel.getTagsByRecipeId(id);
+  if (Object.keys(req.body).length > 1) {
+    res.status(400).json({
+      success: false,
+      error: "Invalid request 😞. Please review and try again!",
+    });
+  }
+  const id = req.body;
+  const result = await recipeTagsModel.getTagsByRecipeId(id);
   if (result != null) {
     res.status(200).json({ success: true, payload: result });
   } else {
@@ -46,7 +53,7 @@ export async function createRecipesTag(req, res) {
     });
   } else {
     const newTag = req.body;
-    const result = await tagsModel.createRecipesTag(newTag);
+    const result = await recipeTagsModel.createRecipesTag(newTag);
     if (result != null) {
       res.status(201).json({ success: true, payload: result });
     } else {
@@ -67,7 +74,9 @@ export async function deleteRecipeTagByRecipeId(req, res) {
     });
   } else {
     const recipeTagPair = req.body;
-    const result = await tagsModel.deleteRecipeTagByRecipeId(recipeTagPair);
+    const result = await recipeTagsModel.deleteRecipeTagByRecipeId(
+      recipeTagPair
+    );
     if (result != null) {
       res.status(200).json({ success: true, payload: result });
     } else {

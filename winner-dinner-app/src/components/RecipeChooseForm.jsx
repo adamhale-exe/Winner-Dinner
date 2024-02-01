@@ -1,15 +1,16 @@
 import { useState } from "react";
 import TagButton from "./TagButton";
+import getRecipeByTag from "../customHooks/getRecipeByTag";
 
 const tagArr = [
+  "Italian",
+  "Chinese",
+  "Spicy",
   "Mexican",
   "Chips",
-  "Pasta",
-  "Chinese",
   "Quick",
-  "Steak",
   "Cheesy",
-  "Broth",
+  "Pastry",
 ];
 
 export default function RecipeChooseForm({ recipeChosenHandler }) {
@@ -20,6 +21,10 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
   function removeItem(itemName) {
     const filteredList = searchCritera.filter((i) => i !== itemName);
     setSearchCriteria(filteredList);
+  }
+  async function clickHandler(tagArr) {
+    const output = await getRecipeByTag(tagArr);
+    console.log(output);
   }
   return (
     <>
@@ -44,7 +49,7 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
         {/* submit button to search for things matching those criteria  */}
         <button
           className="bg-slate-400 text-xl p-3 m-4 rounded-2xl border-black border-4 shadow-block hover:shadow-blockhover"
-          onClick={() => console.log(searchCritera)}
+          onClick={() => clickHandler(searchCritera)}
         >
           Search!
         </button>
