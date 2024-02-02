@@ -5,7 +5,7 @@ export default function RecipeCard({ currentRecipe, recipeChosenFalse }) {
     <div className="flex flex-col justify-center items-center">
       <div className="flex flex-col text-center justify-center items-center rounded-2xl bg-orange-400 border-black border-4 w-80 min-h-60 text-xl p-4 shadow-blockhover">
         <h2 className="text-2xl pb-2">You should cook:</h2>
-        <h2 className="flex flex-row justify-center items-center">
+        <h2 className="flex flex-row justify-center items-center text-2xl">
           <span className="material-symbols-rounded">local_dining</span>
           {currentRecipe.name}
           <span className="material-symbols-rounded">local_dining</span>
