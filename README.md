@@ -21,7 +21,7 @@ Store all of your favourite recipes in one place. Whether it's a family favourit
 
 ## Getting Started
 
-To get started with Winner Dinner, follow the instructions in each folder or use the link to the right for the live version of the site.
+To get started with Winner Dinner, follow the instructions in each folder or use [this link](winner-dinner.vercel.app) for the live version of the site.
 
 ## Feedback
 
