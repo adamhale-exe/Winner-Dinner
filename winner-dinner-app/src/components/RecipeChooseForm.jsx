@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TagButton from "./TagButton";
 import getRecipeByTag from "../customHooks/getRecipeByTag";
 import getRecipe from "../customHooks/getRecipe";
 import getTags from "../customHooks/getTags";
 
-const tagArr = await getTags();
-
 export default function RecipeChooseForm({ recipeChosenHandler }) {
   let [searchCritera, setSearchCriteria] = useState([]);
+  let [tagArr, setTagArr] = useState([]);
   function addItem(itemName) {
     setSearchCriteria([...searchCritera, itemName]);
   }
@@ -26,6 +25,13 @@ export default function RecipeChooseForm({ recipeChosenHandler }) {
     const data = await getRecipe(filteredOutput[randomID].recipes);
     recipeChosenHandler(data.payload);
   }
+  useEffect(() => {
+    const fetchData = async () => {
+      const returnTagArr = await getTags();
+      setTagArr(returnTagArr);
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <div className="flex flex-col text-center justify-evenly rounded-2xl shadow-block bg-orange-400 border-black border-4 mx-10 w-80 h-80 mt-4">
